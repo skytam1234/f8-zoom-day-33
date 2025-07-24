@@ -222,6 +222,7 @@ const todoTask = {
         });
 
         this.btnOpenOrCloseForm.onclick = () => {
+            this.appModal.innerHTML = `<span slot="title">Nhập thông tin</span>`;
             this.appModal.open();
         };
         this.listTask.onclick = async (e) => {
@@ -234,7 +235,7 @@ const todoTask = {
                 dropdown.classList.toggle(`show`);
             }
             if (editBtn) {
-                this.appModal.innerHTML = `<span slot="title">Edit Form</span>`;
+                this.appModal.innerHTML = `<span slot="title">Sửa thông tin</span>`;
                 const oldTask = await DAO.getTask(editBtn.dataset.id);
                 this.appModal.edit(oldTask);
             }
